@@ -3,22 +3,22 @@
 # Contact Manager Setup Script
 # This script creates the complete project structure for the Contact Manager application
 
-echo "🚀 Setting up Contact Manager project structure..."
+echo " Setting up Contact Manager project structure..."
 
 # Create main project directory
 mkdir -p contact-manager
 cd contact-manager
 
 # Create backend structure
-echo "📁 Creating backend structure..."
+echo " Creating backend structure..."
 mkdir -p backend/{src/{controllers,models,routes,middleware,utils},tests,database,logs}
 
 # Create frontend structure  
-echo "📁 Creating frontend structure..."
+echo " Creating frontend structure..."
 mkdir -p frontend/src/{app/{components/{contact-list,contact-form,search-bar},services},assets}
 
 # Create backend files
-echo "📝 Creating backend files..."
+echo " Creating backend files..."
 
 # Backend package.json
 cat > backend/package.json << 'EOF'
@@ -64,7 +64,7 @@ cat > backend/package.json << 'EOF'
 EOF
 
 # Frontend package.json
-echo "📝 Creating frontend files..."
+echo " Creating frontend files..."
 cat > frontend/package.json << 'EOF'
 {
   "name": "contact-manager-frontend",
@@ -83,37 +83,37 @@ cat > frontend/package.json << 'EOF'
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^17.0.0",
-    "@angular/common": "^17.0.0",
-    "@angular/compiler": "^17.0.0",
-    "@angular/core": "^17.0.0",
-    "@angular/forms": "^17.0.0",
-    "@angular/platform-browser": "^17.0.0",
-    "@angular/platform-browser-dynamic": "^17.0.0",
-    "@angular/router": "^17.0.0",
+    "@angular/animations": "^19.2.14",
+    "@angular/common": "^19.2.14",
+    "@angular/compiler": "^19.2.14",
+    "@angular/core": "^19.2.14",
+    "@angular/forms": "^19.2.14",
+    "@angular/platform-browser": "^19.2.14",
+    "@angular/platform-browser-dynamic": "^19.2.14",
+    "@angular/router": "^19.2.14",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.0"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "^17.0.0",
-    "@angular/cli": "^17.0.0",
-    "@angular/compiler-cli": "^17.0.0",
+    "@angular-devkit/build-angular": "^19.2.15",
+    "@angular/cli": "^19.2.15",
+    "@angular/compiler-cli": "^19.2.14",
     "@types/jasmine": "~5.1.0",
     "@types/node": "^18.18.0",
     "jasmine-core": "~5.1.0",
     "karma": "~6.4.0",
-    "karma-chrome-headless": "~3.1.0",
+    "karma-chrome-launcher": "~3.2.0",
     "karma-coverage": "~2.2.0",
     "karma-jasmine": "~5.1.0",
     "karma-jasmine-html-reporter": "~2.1.0",
-    "typescript": "~5.2.0"
+    "typescript": "5.8"
   }
 }
 EOF
 
 # Environment files
-echo "🔧 Creating environment files..."
+echo " Creating environment files..."
 cat > backend/.env.example << 'EOF'
 # Backend Environment Variables
 PORT=3000
@@ -132,7 +132,7 @@ EOF
 cp backend/.env.example backend/.env
 
 # Git ignore
-echo "📄 Creating .gitignore..."
+echo " Creating .gitignore..."
 cat > .gitignore << 'EOF'
 # Dependencies
 node_modules/
@@ -194,7 +194,7 @@ junit.xml
 EOF
 
 # Create a simple README
-echo "📖 Creating README..."
+echo " Creating README..."
 cat > README.md << 'EOF'
 # Contact List Manager
 
@@ -227,11 +227,11 @@ A full-stack contact management application built with Angular and Node.js/Expre
    - Backend API: http://localhost:3000
 
 ### Features
-- ✅ Add/Delete contacts with validation
-- ✅ Typo-tolerant search
-- ✅ Real-time updates
-- ✅ Responsive design
-- ✅ Comprehensive tests
+-  Add/Delete contacts with validation
+-  Typo-tolerant search
+-  Real-time updates
+-  Responsive design
+-  Comprehensive tests
 
 ### Technology Stack
 - **Frontend**: Angular 17+ with TypeScript
@@ -242,35 +242,11 @@ A full-stack contact management application built with Angular and Node.js/Expre
 For detailed setup instructions and architecture decisions, see the complete README in the project root.
 EOF
 
-echo "✅ Project structure created successfully!"
 echo ""
-echo "📁 Project structure:"
-echo "contact-manager/"
-echo "├── backend/"
-echo "│   ├── src/"
-echo "│   │   ├── controllers/"
-echo "│   │   ├── models/"
-echo "│   │   ├── routes/"
-echo "│   │   ├── middleware/"
-echo "│   │   └── utils/"
-echo "│   ├── tests/"
-echo "│   ├── database/"
-echo "│   └── package.json"
-echo "├── frontend/"
-echo "│   ├── src/"
-echo "│   │   ├── app/"
-echo "│   │   │   ├── components/"
-echo "│   │   │   └── services/"
-echo "│   │   └── assets/"
-echo "│   └── package.json"
-echo "├── .gitignore"
-echo "└── README.md"
-echo ""
-echo "🚀 Next steps:"
+echo " Next steps:"
 echo "1. cd contact-manager"
 echo "2. Copy the provided code files to their respective locations"
 echo "3. cd backend && npm install && npm run dev"
 echo "4. cd frontend && npm install && ng serve"
 echo "5. Open http://localhost:4200"
 echo ""
-echo "Happy coding! 🎉"
