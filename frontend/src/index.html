@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Contact Manager</title>
+  <base href="/">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="A modern contact management application built with Angular and Node.js">
+  <meta name="keywords" content="contact manager, contacts, address book, angular, nodejs">
+  <meta name="author" content="Senior Software Engineer">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="http://localhost:4200/">
+  <meta property="og:title" content="Contact Manager">
+  <meta property="og:description" content="A modern contact management application">
+  
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="http://localhost:4200/">
+  <meta property="twitter:title" content="Contact Manager">
+  <meta property="twitter:description" content="A modern contact management application">
+  
+  <!-- Preconnect to API -->
+  <link rel="preconnect" href="http://localhost:3000">
+  
+  <!-- PWA Meta Tags -->
+  <meta name="theme-color" content="#667eea">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="apple-mobile-web-app-title" content="Contact Manager">
+  
+  <!-- Fonts Preload -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  
+  <style>
+    /* Critical CSS for faster loading */
+    body {
+      margin: 0;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+    }
+    
+    /* Loading spinner */
+    .initial-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      z-index: 9999;
+    }
+    
+    .loader-spinner {
+      width: 40px;
+      height: 40px;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+      border-radius: 50%;
+      border-top-color: white;
+      animation: spin 1s linear infinite;
+      margin-bottom: 1rem;
+    }
+    
+    .loader-text {
+      font-size: 1.2rem;
+      font-weight: 600;
+      margin: 0;
+      color: white;
+    }
+    
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    /* Hide loader when app is ready */
+    .app-ready .initial-loader {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <!-- Initial Loading Screen -->
+  <div class="initial-loader" id="initialLoader">
+    <div class="loader-spinner"></div>
+    <p class="loader-text">Loading Contact Manager...</p>
+  </div>
+  
+  <!-- Angular App Root -->
+  <app-root></app-root>
+  
+  <!-- Hide loader when Angular is ready -->
+  <script>
+    // Hide loader when Angular app is bootstrapped
+    document.addEventListener('DOMContentLoaded', function() {
+      setTimeout(function() {
+        document.body.classList.add('app-ready');
+      }, 100);
+    });
+    
+    // Fallback: Hide loader after maximum time
+    setTimeout(function() {
+      document.body.classList.add('app-ready');
+    }, 5000);
+  </script>
+</body>
+</html>
