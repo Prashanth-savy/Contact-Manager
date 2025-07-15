@@ -15,7 +15,7 @@
 ```bash
 # Install Node.js 18+ and Angular CLI
 node --version  # Should be 18+
-npm install -g @angular/cli@17
+npm install -g @angular/cli@19
 ```
 
 ### 1-Minute Setup
