@@ -36,9 +36,7 @@ A full-stack contact management application built with Angular and Node.js/Expre
 - ✅ Comprehensive tests
 
 ### Technology Stack
-- **Frontend**: Angular 17+ with TypeScript
+- **Frontend**: Angular 19 with TypeScript
 - **Backend**: Node.js with Express
 - **Database**: SQLite with better-sqlite3
 - **Testing**: Jest for backend tests
-
-For detailed setup instructions and architecture decisions, see the complete README in the project root.
